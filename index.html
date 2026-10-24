@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15251c">
+<title>PYARI MAA ke liye DUA</title>
+
+<style>
+:root {
+  --bg: #101a14;
+  --card: #1b2b20;
+  --gold: #ddc28b;
+  --text: #fffaf0;
+  --muted: #c2cbbb;
+  --green: #315d40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Tahoma, sans-serif;
+  line-height: 1.8;
+}
+
+header {
+  text-align: center;
+  padding: 25px 14px;
+  background: linear-gradient(145deg, #315d40, #101a14);
+  border-bottom: 1px solid #806c44;
+}
+
+header h1 {
+  font-size: clamp(22px, 5vw, 30px);
+  color: var(--gold);
+  margin: 8px 0;
+}
+
+header h2 {
+  font-size: clamp(20px, 4vw, 25px);
+  margin: 4px 0;
+}
+
+header p {
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+main {
+  width: 100%;
+  max-width: 760px;
+  margin: auto;
+  padding: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #3a4b3d;
+  border-radius: 16px;
+  padding: clamp(13px, 4vw, 22px);
+  margin: 14px 0;
+}
+
+h3 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* تصویر portrait یا landscape؛ بدون crop */
+.photo-area {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.photo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  margin: 0 auto;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  filter: grayscale(100%);
+}
+
+.placeholder {
+  width: 100%;
+  border: 1px dashed #82917e;
+  padding: 24px 12px;
+  text-align: center;
+  border-radius: 12px;
+  color: var(--muted);
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  background: #25372a;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid #526652;
+}
+
+input[type="time"] {
+  padding: 9px;
+  width: 100%;
+  min-width: 0;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #526652;
+  background: #f8f6ef;
+  color: #18251b;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 14px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.primary {
+  background: var(--gold);
+  color: #17251b;
+}
+
+.secondary {
+  background: var(--green);
+  color: white;
+  border: 1px solid #708c72;
+}
+
+.full {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.prayer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(110px, 150px);
+  gap: 12px;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.prayer label {
+  margin: 0;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.arabic {
+  text-align: center;
+  font-size: clamp(22px, 5vw, 28px);
+  line-height: 2;
+  direction: rtl;
+}
+
+#status,
+#alertBox {
+  color: var(--gold);
+}
+
+#alertBox {
+  display: none;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 14px 0;
+  text-align: center;
+  background: #29372b;
+}
+
+.switchrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.switchrow input {
+  width: 22px;
+  height: 22px;
+  accent-color: #d8bd82;
+  flex-shrink: 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px 12px;
+  font-size: 13px;
+}
+
+@media (max-width: 380px) {
+  .prayer {
+    grid-template-columns: minmax(0, 1fr) 105px;
+    gap: 8px;
+  }
+}
+
+/* چھوٹی اسکرین پر بھی تصویر اپنی اصل شکل میں */
+@media (max-width: 600px) {
+  .photo {
+    max-height: 65vh;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div style="font-size:34px">🤍</div>
+  <h1>PYARI MAA ke liye DUA</h1>
+  <h2>Fahmida Sabreen</h2>
+  <p>میری پیاری ماں کے لیے دعا</p>
+</header>
+
+<main>
+  <section class="card">
+    <h3 class="center">🌹 میری پیاری ماں</h3>
+
+    <div class="photo-area">
+      <img id="motherPhoto" class="photo"
+           alt="Fahmida Sabreen"
+           hidden>
+      <div id="photoPlaceholder" class="placeholder">
+        <div style="font-size:40px">🕊️</div>
+        <p>اپنی پیاری والدہ کی تصویر یہاں دکھائیں</p>
+        <p class="note">Portrait اور Landscape دونوں تصاویر قابلِ قبول ہیں۔</p>
+      </div>
+    </div>
+
+    <label for="photoInput">والدہ کی تصویر منتخب کریں</label>
+    <input id="photoInput" type="file" accept="image/*">
+
+    <button class="secondary full" onclick="removePhoto()">
+      تصویر ہٹائیں
+    </button>
+
+    <p class="note">
+      تصویر پوری دکھائی جائے گی، اس کے کنارے خود سے نہیں کاٹے جائیں گے۔
+      تصویر بلیک اینڈ وائٹ ہوگی۔ آپ نئی تصویر منتخب کرکے اسے تبدیل کرسکتے ہیں۔
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>🤲 والدہ کے لیے دعا</h3>
+    <p class="arabic">اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا</p>
+    <p class="center">اے اللہ! ان کی مغفرت فرما اور ان پر رحم فرما۔ آمین۔</p>
+
+    <button class="primary full" onclick="showDua()">
+      والدہ کے لیے دعا پڑھیں
+    </button>
+    <p id="duaMessage" class="center"></p>
+  </section>
+
+  <section class="card">
+    <h3>⏰ نمازوں کے اوقات مقرر کریں</h3>
+    <p class="note">
+      اپنے موجودہ مقام کے مطابق درست اوقات درج کریں۔
+      یہ اوقات آپ کے آلے کے مقامی وقت کے مطابق استعمال ہوں گے۔
+    </p>
+
+    <div class="prayer">
+      <label for="fajr">فجر</label>
+      <input id="fajr" type="time" value="05:00">
+    </div>
+
+    <div class="prayer">
+      <label for="zuhr">ظہر</label>
+      <input id="zuhr" type="time" value="13:00">
+    </div>
+
+    <div class="prayer">
+      <label for="asr">عصر</label>
+      <input id="asr" type="time" value="16:30">
+    </div>
+
+    <div class="prayer">
+      <label for="maghrib">مغرب</label>
+      <input id="maghrib" type="time" value="18:00">
+    </div>
+
+    <div class="prayer">
+      <label for="isha">عشاء</label>
+      <input id="isha" type="time" value="20:00">
+    </div>
+
+    <div class="prayer">
+      <label for="jummah">جمعہ کی نماز</label>
+      <input id="jummah" type="time" value="13:30">
+    </div>
+
+    <p class="note">
+      یہ صرف ابتدائی نمونہ اوقات ہیں؛ اپنے شہر کے مطابق درست وقت درج کریں۔
+      جمعہ کی یاد دہانی صرف جمعہ کے دن ہوگی۔
+    </p>
+
+    <div class="switchrow">
+      <label for="jummahOn">جمعہ کی یاد دہانی آن رکھیں</label>
+      <input type="checkbox" id="jummahOn" checked>
+    </div>
+
+    <button class="primary full" onclick="enableReminders()">
+      یاد دہانیاں آن کریں
+    </button>
+
+    <button class="secondary full" onclick="saveSettings()">
+      اوقات محفوظ کریں
+    </button>
+
+    <p id="status" role="status"></p>
+  </section>
+
+  <div id="alertBox">
+    <h3>🤲 PYARI MAA ke liye DUA</h3>
+    <p>فہمیدہ صابرین کے لیے دعا کا وقت ہے۔</p>
+    <p class="arabic">اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا</p>
+    <button class="primary" onclick="showDua()">دعا پڑھیں</button>
+    <button class="secondary" onclick="dismissAlert()">بند کریں</button>
+  </div>
+
+  <section class="card">
+    <h3>🔔 یاد دہانی کی حالت</h3>
+    <p id="reminderState">یاد دہانیاں ابھی بند ہیں۔</p>
+    <p class="note">
+      اہم: یہ ایک صفحے کی ویب ایپ ہے۔ یاد دہانی کے لیے صفحہ کھلا،
+      براؤزر فعال اور آلہ بیدار ہونا چاہیے۔ صفحہ بند ہونے یا آلہ سلیپ
+      ہونے پر اطلاع کی ضمانت نہیں۔ نوٹیفکیشن کے لیے براؤزر کی اجازت بھی درکار ہے۔
+    </p>
+  </section>
+</main>
+
+<footer>
+  PYARI MAA ke liye DUA · Fahmida Sabreen<br>
+  اللہ تعالیٰ میری پیاری والدہ کی مغفرت فرمائے۔ آمین۔
+</footer>
+
+<script>
+const STORAGE_KEY = "pyariMaaDuaSettingsV1";
+const PHOTO_KEY = "pyariMaaPhoto";
+
+let reminderEnabled = false;
+let firedToday = new Set();
+let lastDate = "";
+
+const prayerIds = ["fajr", "zuhr", "asr", "maghrib", "isha"];
+const allIds = [...prayerIds, "jummah"];
+
+function todayKey() {
+  const d = new Date();
+  return d.getFullYear() + "-" +
+    (d.getMonth() + 1) + "-" + d.getDate();
+}
+
+function showDua() {
+  document.getElementById("duaMessage").textContent =
+    "اللہ تعالیٰ فہمیدہ صابرین کی مغفرت فرمائے، ان پر رحم فرمائے اور ان کے درجات بلند فرمائے۔ آمین۔";
+
+  document.getElementById("alertBox").style.display = "block";
+}
+
+function dismissAlert() {
+  document.getElementById("alertBox").style.display = "none";
+}
+
+function saveSettings() {
+  const settings = {};
+
+  allIds.forEach(id => {
+    settings[id] = document.getElementById(id).value;
+  });
+
+  settings.jummahOn =
+    document.getElementById("jummahOn").checked;
+
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+    document.getElementById("status").textContent =
+      "اوقات محفوظ ہوگئے۔";
+  } catch (e) {
+    document.getElementById("status").textContent =
+      "اوقات محفوظ نہیں ہوسکے۔";
+  }
+}
+
+function loadSettings() {
+  try {
+    const settings = JSON.parse(
+      localStorage.getItem(STORAGE_KEY) || "null"
+    );
+
+    if (!settings) return;
+
+    allIds.forEach(id => {
+      if (settings[id]) {
+        document.getElementById(id).value = settings[id];
+      }
+    });
+
+    if (typeof settings.jummahOn === "boolean") {
+      document.getElementById("jummahOn").checked =
+        settings.jummahOn;
+    }
+  } catch (e) {}
+}
+
+async function enableReminders() {
+  saveSettings();
+  reminderEnabled = true;
+
+  if ("Notification" in window) {
+    if (Notification.permission === "default") {
+      try {
+        await Notification.requestPermission();
+      } catch (e) {}
+    }
+  }
+
+  if ("Notification" in window &&
+      Notification.permission === "granted") {
+    document.getElementById("status").textContent =
+      "یاد دہانیاں آن ہیں۔ صفحہ کھلا رکھیں۔";
+  } else {
+    document.getElementById("status").textContent =
+      "صفحے پر یاد دہانیاں آن ہیں۔ براؤزر نوٹیفکیشن کی اجازت دستیاب نہیں۔";
+  }
+
+  document.getElementById("reminderState").textContent =
+    "یاد دہانیاں آن ہیں۔ آلے کا مقامی وقت استعمال ہوگا۔";
+
+  checkReminders();
+}
+
+function checkReminders() {
+  if (!reminderEnabled) return;
+
+  const now = new Date();
+  const date = todayKey();
+
+  if (lastDate !== date) {
+    lastDate = date;
+    firedToday = new Set();
+  }
+
+  const current = now.getHours() * 60 + now.getMinutes();
+  const day = now.getDay();
+
+  const ids = [...prayerIds];
+
+  if (day === 5 &&
+      document.getElementById("jummahOn").checked) {
+    ids.push("jummah");
+  }
+
+  ids.forEach(id => {
+    const value = document.getElementById(id).value;
+    if (!value) return;
+
+    const [h, m] = value.split(":").map(Number);
+    const target = h * 60 + m;
+    const key = date + "-" + id;
+
+    // مقررہ وقت سے اگلے دو منٹ تک چیک کریں تاکہ
+    // براؤزر کا ٹائمر ذرا دیر سے چلنے پر بھی یاد دہانی رہ نہ جائے۔
+    if (current >= target &&
+        current < target + 2 &&
+        !firedToday.has(key)) {
+      firedToday.add(key);
+      sendReminder(id);
+    }
+  });
+}
+
+function sendReminder(id) {
+  const labels = {
+    fajr: "فجر",
+    zuhr: "ظہر",
+    asr: "عصر",
+    maghrib: "مغرب",
+    isha: "عشاء",
+    jummah: "جمعہ"
+  };
+
+  document.getElementById("alertBox").style.display = "block";
+
+  document.getElementById("duaMessage").textContent =
+    labels[id] + " کے وقت کی یاد دہانی۔";
+
+  document.getElementById("reminderState").textContent =
+    labels[id] + " کی یاد دہانی دکھائی گئی۔";
+
+  if ("Notification" in window &&
+      Notification.permission === "granted") {
+    try {
+      new Notification("PYARI MAA ke liye DUA", {
+        body: labels[id] +
+          " کے بعد فہمیدہ صابرین کے لیے دعا کریں۔"
+      });
+    } catch (e) {}
+  }
+}
+
+/* تصویر کا انتخاب */
+const photoInput = document.getElementById("photoInput");
+
+function displayPhoto(src) {
+  const img = document.getElementById("motherPhoto");
+  img.src = src;
+  img.hidden = false;
+  document.getElementById("photoPlaceholder").hidden = true;
+}
+
+photoInput.addEventListener("change", function() {
+  const file = this.files && this.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("براہ کرم تصویر منتخب کریں۔");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const data = e.target.result;
+    displayPhoto(data);
+
+    try {
+      localStorage.setItem(PHOTO_KEY, data);
+      document.getElementById("status").textContent =
+        "تصویر اسی براؤزر میں محفوظ کرنے کی کوشش کی گئی۔";
+    } catch (err) {
+      document.getElementById("status").textContent =
+        "تصویر دکھائی جارہی ہے، مگر اسے براؤزر میں محفوظ نہیں کیا جاسکا۔";
+    }
+  };
+
+  reader.readAsDataURL(file);
+});
+
+function removePhoto() {
+  document.getElementById("motherPhoto").hidden = true;
+  document.getElementById("motherPhoto").removeAttribute("src");
+  document.getElementById("photoPlaceholder").hidden = false;
+  document.getElementById("photoInput").value = "";
+
+  try {
+    localStorage.removeItem(PHOTO_KEY);
+  } catch (e) {}
+
+  document.getElementById("status").textContent =
+    "تصویر ہٹا دی گئی۔";
+}
+
+try {
+  const savedPhoto = localStorage.getItem(PHOTO_KEY);
+  if (savedPhoto) displayPhoto(savedPhoto);
+} catch (e) {}
+
+loadSettings();
+
+setInterval(checkReminders, 1000);
+</script>
+</body>
+</html>
