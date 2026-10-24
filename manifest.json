@@ -1,10 +1,10 @@
 
 {
   "id": "./",
-  "name": "PYARI MAA ke liye DUA",
-  "short_name": "Pyari Maa",
-  "description": "A personal dua and prayer reminder app dedicated to Fahmida Sabreen.",
-  "lang": "en",
+  "name": "Noor-e-Walida | Fahmida Sabreen",
+  "short_name": "Noor-e-Walida",
+  "description": "A personal dua and remembrance app dedicated to Fahmida Sabreen.",
+  "lang": "ur",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
